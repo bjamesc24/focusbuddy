@@ -2,7 +2,7 @@
 
 > AI-powered focus sprints for ADHD students.
 
-**[Live Demo →](#)** *(coming soon)*
+**[Live Demo →](https://focusbuddy-phi.vercel.app)**
 
 ---
 
