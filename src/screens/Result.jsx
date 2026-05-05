@@ -6,7 +6,7 @@ export default function Result({ preMood, postMood, aiMsg, aiLoading, todayCount
       <style>{CSS_ANIMATIONS}</style>
       <div style={styles.box} className="pop">
 
-        <div style={{ ...styles.card, textAlign: "center", border: "1px solid rgba(45,212,191,0.4)" }}>
+        <div style={{ ...styles.card, textAlign: "center", border: "1px solid var(--app-teal-a40)" }}>
           <div style={{ fontSize: 48, marginBottom: 20 }}>✨</div>
 
           {/* Mood journey */}
@@ -25,19 +25,15 @@ export default function Result({ preMood, postMood, aiMsg, aiLoading, todayCount
           {/* AI message */}
           <div style={{
             background: COLORS.SURF2,
-            border: "1px solid rgba(45,212,191,0.15)",
+            border: "1px solid var(--app-teal-a15)",
             borderRadius: 16, padding: "18px 20px",
             marginBottom: 20, minHeight: 72,
             display: "flex", alignItems: "center", justifyContent: "center",
           }}>
             {aiLoading ? (
-              <div style={{ color: COLORS.MUTED2, fontSize: 13 }} className="pulse">
-                FocusBuddy is thinking...
-              </div>
+              <div style={{ color: COLORS.MUTED2, fontSize: 13 }} className="pulse">FocusBuddy is thinking...</div>
             ) : (
-              <div style={{ color: COLORS.LITE, fontSize: 14, lineHeight: 1.7, fontStyle: "italic" }}>
-                "{aiMsg}"
-              </div>
+              <div style={{ color: COLORS.LITE, fontSize: 14, lineHeight: 1.7, fontStyle: "italic" }}>"{aiMsg}"</div>
             )}
           </div>
 

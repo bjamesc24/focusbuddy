@@ -12,9 +12,7 @@ export default function Consent({ onNext }) {
       <style>{CSS_ANIMATIONS}</style>
       <div style={styles.box} className="fade">
 
-        <div style={{ color: COLORS.TEAL, fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.2, marginBottom: 8 }}>
-          Step 1 of 2
-        </div>
+        <div style={{ color: COLORS.TEAL, fontSize: 11, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1.2, marginBottom: 8 }}>Step 1 of 2</div>
         <h1 style={{ ...styles.h1, marginBottom: 4 }}>Privacy & Consent</h1>
         <p style={styles.sub}>We believe in being upfront about your data.</p>
 
@@ -23,8 +21,8 @@ export default function Consent({ onNext }) {
             <div key={title} style={{ display: "flex", gap: 14, marginBottom: 22 }}>
               <div style={{
                 width: 36, height: 36, borderRadius: 10,
-                background: "rgba(45,212,191,0.1)",
-                border: "1px solid rgba(45,212,191,0.2)",
+                background: "var(--app-teal-a10)",
+                border: "1px solid var(--app-teal-a20)",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 fontSize: 17, flexShrink: 0,
               }}>{icon}</div>
@@ -34,7 +32,7 @@ export default function Consent({ onNext }) {
               </div>
             </div>
           ))}
-          <div style={{ borderTop: `1px solid ${COLORS.BORD}`, paddingTop: 20 }}>
+          <div style={{ borderTop: "1px solid var(--app-bord)", paddingTop: 20 }}>
             <button style={styles.primaryBtn} onClick={onNext}>I Agree & Continue</button>
           </div>
         </div>

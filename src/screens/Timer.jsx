@@ -1,7 +1,17 @@
-import { CSS_ANIMATIONS, COLORS, TIPS, styles, SPRINT_SECS } from "../constants";
+import { CSS_ANIMATIONS, COLORS, TIPS, styles } from "../constants";
 import TimerRing from "../components/TimerRing";
+import { useSound } from "../hooks/useSound";
 
-export default function Timer({ timeLeft, paused, tipIdx, onTogglePause, onCancel }) {
+const SOUND_OPTIONS = [
+  { key: "off",   label: "Off",   icon: "🔇" },
+  { key: "white", label: "White", icon: "📻" },
+  { key: "rain",  label: "Rain",  icon: "🌧" },
+  { key: "brown", label: "Brown", icon: "🌊" },
+];
+
+export default function Timer({ timeLeft, totalSecs, paused, tipIdx, onTogglePause, onCancel, onSkip }) {
+  const [sound, setSound] = useSound();
+
   const mm = String(Math.floor(timeLeft / 60)).padStart(2, "0");
   const ss = String(timeLeft % 60).padStart(2, "0");
 
@@ -13,8 +23,8 @@ export default function Timer({ timeLeft, paused, tipIdx, onTogglePause, onCance
         {/* Status badge */}
         <div style={{
           display: "inline-flex", alignItems: "center", gap: 7,
-          background: paused ? COLORS.SURF2 : "rgba(45,212,191,0.1)",
-          border: `1px solid ${paused ? "rgba(71,85,105,0.3)" : "rgba(45,212,191,0.3)"}`,
+          background: paused ? COLORS.SURF2 : "var(--app-teal-a10)",
+          border:     `1px solid ${paused ? "rgba(71,85,105,0.3)" : "var(--app-teal-a30)"}`,
           borderRadius: 20, padding: "6px 16px", marginBottom: 28,
           color: paused ? COLORS.MUTED2 : COLORS.TEAL,
           fontSize: 12, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1,
@@ -27,20 +37,50 @@ export default function Timer({ timeLeft, paused, tipIdx, onTogglePause, onCance
           {paused ? "Paused" : "Sprint active"}
         </div>
 
-        <TimerRing
-          timeLeft={timeLeft}
-          totalSecs={SPRINT_SECS}
-          paused={paused}
-          mm={mm}
-          ss={ss}
-        />
+        <TimerRing timeLeft={timeLeft} totalSecs={totalSecs} paused={paused} mm={mm} ss={ss} />
 
-        {/* Controls */}
-        <div style={{ display: "flex", gap: 10, justifyContent: "center", marginBottom: 28 }}>
+        {/* Main controls */}
+        <div style={{ display: "flex", gap: 10, justifyContent: "center", marginBottom: 16 }}>
           <button onClick={onTogglePause} style={{ ...styles.primaryBtn, width: "auto", padding: "13px 32px" }}>
             {paused ? "▶ Resume" : "⏸ Pause"}
           </button>
           <button onClick={onCancel} style={styles.ghostBtn}>Cancel</button>
+        </div>
+
+        {/* Skip to end */}
+        <button
+          onClick={onSkip}
+          style={{
+            background: "none", border: "none", color: COLORS.MUTED,
+            fontSize: 12, cursor: "pointer", marginBottom: 24,
+            textDecoration: "underline", textDecorationStyle: "dotted",
+          }}
+        >
+          Skip to end (demo)
+        </button>
+
+        {/* Ambient sound */}
+        <div style={{ marginBottom: 24 }}>
+          <div style={{ color: COLORS.MUTED, fontSize: 10, fontWeight: 700, textTransform: "uppercase", letterSpacing: 1, marginBottom: 10 }}>
+            Ambient sound
+          </div>
+          <div style={{ display: "flex", gap: 6, justifyContent: "center" }}>
+            {SOUND_OPTIONS.map(({ key, label, icon }) => (
+              <button
+                key={key}
+                onClick={() => setSound(key)}
+                style={{
+                  padding: "6px 12px", borderRadius: 20, fontSize: 12, cursor: "pointer",
+                  border:     `1px solid ${key === sound ? COLORS.TEAL : "rgba(71,85,105,0.35)"}`,
+                  background:  key === sound ? "var(--app-teal-a14)" : "transparent",
+                  color:       key === sound ? COLORS.TEAL : COLORS.MUTED2,
+                  fontWeight:  key === sound ? 700 : 400,
+                }}
+              >
+                {icon} {label}
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* Rotating tip */}

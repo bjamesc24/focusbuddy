@@ -14,10 +14,8 @@ export default function MoodPicker({ value, onChange }) {
             borderRadius: 14,
             transition: "all 0.2s ease",
             transform: value === i ? "scale(1.35)" : "scale(1)",
-            background: value === i ? "rgba(45,212,191,0.14)" : "transparent",
-            border: value === i
-              ? "1.5px solid rgba(45,212,191,0.5)"
-              : "1.5px solid transparent",
+            background: value === i ? "var(--app-teal-a14)" : "transparent",
+            border:     value === i ? "1.5px solid var(--app-teal-a50)" : "1.5px solid transparent",
             userSelect: "none",
           }}
         >

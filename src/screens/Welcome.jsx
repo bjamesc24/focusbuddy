@@ -9,21 +9,14 @@ export default function Welcome({ onNext }) {
         <div style={{ textAlign: "center", marginBottom: 28 }}>
           <div style={{
             width: 80, height: 80,
-            background: "linear-gradient(135deg, #2DD4BF, #38BDF8)",
+            background: "var(--app-primary-btn)",
             borderRadius: 24,
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: 38,
-            marginBottom: 14,
-            boxShadow: "0 20px 48px rgba(45,212,191,0.3)",
+            display: "inline-flex", alignItems: "center", justifyContent: "center",
+            fontSize: 38, marginBottom: 14,
+            boxShadow: "0 20px 48px var(--app-teal-a30)",
           }}>⏱</div>
-          <div style={{ color: COLORS.TEAL, fontSize: 26, fontWeight: 800, letterSpacing: -0.5 }}>
-            FocusBuddy
-          </div>
-          <div style={{ color: COLORS.MUTED2, fontSize: 13, marginTop: 3 }}>
-            AI-powered focus sprints for ADHD students
-          </div>
+          <div style={{ color: COLORS.TEAL, fontSize: 26, fontWeight: 800, letterSpacing: -0.5 }}>FocusBuddy</div>
+          <div style={{ color: COLORS.MUTED2, fontSize: 13, marginTop: 3 }}>AI-powered focus sprints for ADHD students</div>
         </div>
 
         <div style={styles.card}>

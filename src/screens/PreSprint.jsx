@@ -1,7 +1,7 @@
 import { CSS_ANIMATIONS, COLORS, MOODS, LABELS, styles } from "../constants";
 import MoodPicker from "../components/MoodPicker";
 
-export default function PreSprint({ preMood, setPreMood, onStart, onBack }) {
+export default function PreSprint({ preMood, setPreMood, task, setTask, onStart, onBack }) {
   return (
     <div style={styles.page}>
       <style>{CSS_ANIMATIONS}</style>
@@ -18,8 +18,25 @@ export default function PreSprint({ preMood, setPreMood, onStart, onBack }) {
           <div style={{ textAlign: "center", marginBottom: 24 }}>
             <div style={{ fontSize: 44, marginBottom: 12 }}>🧠</div>
             <h2 style={{ ...styles.h1, textAlign: "center" }}>Quick check-in</h2>
-            <p style={{ ...styles.sub, textAlign: "center" }}>How are you feeling right now?</p>
+            <p style={{ ...styles.sub, textAlign: "center" }}>Before you dive in.</p>
           </div>
+
+          {/* Task label */}
+          <span style={styles.label}>What are you working on?</span>
+          <input
+            type="text"
+            value={task}
+            onChange={(e) => setTask(e.target.value)}
+            placeholder="e.g. Chapter 5 reading, Math homework…"
+            maxLength={60}
+            style={{
+              display: "block", width: "100%", marginBottom: 22,
+              padding: "12px 14px", borderRadius: 12, fontSize: 14,
+              background: COLORS.SURF2, border: "1px solid var(--app-bord)",
+              color: COLORS.LITE, outline: "none",
+              boxSizing: "border-box",
+            }}
+          />
 
           <span style={styles.label}>Current mood</span>
           <MoodPicker value={preMood} onChange={setPreMood} />
@@ -29,7 +46,7 @@ export default function PreSprint({ preMood, setPreMood, onStart, onBack }) {
           </div>
 
           <button style={styles.primaryBtn} onClick={onStart}>
-            ▶ &nbsp;Start 25-Minute Sprint
+            ▶ &nbsp;Start {"\u202F"}Sprint
           </button>
         </div>
 

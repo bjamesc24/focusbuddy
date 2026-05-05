@@ -7,7 +7,7 @@ export default function PostSprint({ preMood, postMood, setPostMood, onLog }) {
       <style>{CSS_ANIMATIONS}</style>
       <div style={styles.box} className="pop">
 
-        <div style={{ ...styles.card, textAlign: "center", marginBottom: 12, border: "1px solid rgba(45,212,191,0.35)" }}>
+        <div style={{ ...styles.card, textAlign: "center", marginBottom: 12, border: "1px solid var(--app-teal-a35)" }}>
           <div style={{ fontSize: 52, marginBottom: 10 }}>🎉</div>
           <h2 style={{ ...styles.h1, textAlign: "center" }}>Sprint complete!</h2>
           <p style={{ ...styles.sub, textAlign: "center" }}>
@@ -22,13 +22,10 @@ export default function PostSprint({ preMood, postMood, setPostMood, onLog }) {
               You started at &nbsp;{MOODS[preMood]} {LABELS[preMood]}
             </div>
           </div>
-
           <MoodPicker value={postMood} onChange={setPostMood} />
-
           <div style={{ textAlign: "center", color: COLORS.TEAL, fontWeight: 600, marginBottom: 24, fontSize: 15 }}>
             {MOODS[postMood]} &nbsp;{LABELS[postMood]}
           </div>
-
           <button style={styles.primaryBtn} onClick={onLog}>
             Log Sprint &amp; Get AI Kudos →
           </button>
