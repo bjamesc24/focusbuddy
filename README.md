@@ -106,15 +106,6 @@ This project draws on published research examining digital interventions for ADH
 - **Positive reinforcement loops** — immediate, specific feedback after task completion
 - **Ethics of mental health apps** — privacy-first design, no diagnostic claims, clear data transparency
 
----
-
-## Roadmap
-
-- [ ] Screenshots and demo GIF in README
-- [ ] Mobile responsive layout
-- [ ] SMS study-buddy nudges via Twilio
-- [ ] Weekly summary email digest
-- [ ] Shareable streak cards
 
 ---
 
