@@ -2,7 +2,7 @@ import { CSS_ANIMATIONS, COLORS, styles } from "../constants";
 
 const ITEMS = [
   ["🔒", "Local-first storage", "Sprint logs and mood data stay on your device. Nothing is uploaded to any server."],
-  ["📱", "Optional SMS nudges", "If you opt into buddy alerts, only an encrypted message is sent — no data stored remotely."],
+  ["📱", "Optional SMS nudges", "If you opt into buddy alerts, only an encrypted message is sent. No data stored remotely."],
   ["🗑️", "One-tap data purge", "Delete all history instantly from Settings, anytime, no questions asked."],
 ];
 
