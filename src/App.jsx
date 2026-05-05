@@ -142,6 +142,13 @@ export default function App() {
     setScreen("dashboard");
   };
 
+  const resetOnboarding = () => {
+    setIntroDone(false);
+    setConsentDone(false);
+    setSetupDone(false);
+    setScreen("welcome");
+  };
+
   // ── Screen router ─────────────────────────────────────────────────────────
   if (screen === "welcome")
     return <Welcome onNext={() => { setIntroDone(true); setScreen("consent"); }} />;
@@ -222,6 +229,7 @@ export default function App() {
         smsEnabled={smsEnabled} setSmsEnabled={setSmsEnabled}
         theme={theme} setTheme={setTheme}
         onPurge={purgeData}
+        onResetOnboarding={resetOnboarding}
         onBack={() => setScreen("dashboard")}
       />
     );

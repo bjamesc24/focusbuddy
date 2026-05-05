@@ -7,7 +7,7 @@ export default function Settings({
   breakMins, setBreakMins,
   smsEnabled, setSmsEnabled,
   theme, setTheme,
-  onPurge, onBack,
+  onPurge, onResetOnboarding, onBack,
 }) {
   return (
     <div style={styles.page}>
@@ -117,6 +117,18 @@ export default function Settings({
               }}
             >
               Purge all sprint data
+            </button>
+
+            <button
+              onClick={onResetOnboarding}
+              style={{
+                display: "block", width: "100%", padding: "13px", marginTop: 10,
+                borderRadius: 14, fontSize: 14, fontWeight: 700, cursor: "pointer",
+                border: "1px solid rgba(148,163,184,0.3)",
+                background: "rgba(148,163,184,0.08)", color: COLORS.MUTED2,
+              }}
+            >
+              Reset onboarding (show intro again)
             </button>
           </div>
 
