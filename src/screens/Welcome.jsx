@@ -16,7 +16,7 @@ export default function Welcome({ onNext }) {
             boxShadow: "0 20px 48px var(--app-teal-a30)",
           }}>⏱</div>
           <div style={{ color: COLORS.TEAL, fontSize: 26, fontWeight: 800, letterSpacing: -0.5 }}>FocusBuddy</div>
-          <div style={{ color: COLORS.MUTED2, fontSize: 13, marginTop: 3 }}>AI-powered focus sprints for ADHD students</div>
+          <div style={{ color: COLORS.MUTED2, fontSize: 13, marginTop: 3 }}>Focus tools built for the ADHD brain</div>
         </div>
 
         <div style={styles.card}>
@@ -30,7 +30,7 @@ export default function Welcome({ onNext }) {
         </div>
 
         <div style={{ display: "flex", justifyContent: "center", gap: 24, marginTop: 20 }}>
-          {[["⏱", "25-min sprints"], ["🧠", "Mood tracking"], ["🤖", "AI kudos"]].map(([icon, label]) => (
+          {[["⏰", "25-min sprints"], ["🧠", "Mood tracking"], ["💬", "AI Coach"]].map(([icon, label]) => (
             <div key={label} style={{ textAlign: "center" }}>
               <div style={{ fontSize: 20, marginBottom: 4 }}>{icon}</div>
               <div style={{ color: COLORS.MUTED, fontSize: 11 }}>{label}</div>
