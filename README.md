@@ -16,19 +16,19 @@ Built as a final project for CS 401 at Bellevue College, grounded in peer-review
 
 ## Features
 
-- **25-minute sprint timer** — animated SVG countdown ring with pause, resume, and cancel
-- **Task labeling** — users name what they're working on before each sprint, saved with the log
-- **Pre & post mood check-in** — 5-point emoji scale before and after every session
-- **AI coaching** — Claude generates a personalized response based on the user's mood shift after each sprint
-- **Break timer** — automatic countdown between sprint end and mood check
-- **Dashboard** — goal ring, streak counter, best day stat, all-time focus time, avg mood shift
-- **Mood trend chart** — SVG bar chart showing before/after mood across recent sessions
-- **Sprint log** — tabbed history with task, date, duration, and mood data
-- **Settings** — configurable sprint duration (15/25/45/52 min), break duration, daily goal, light/dark theme
-- **localStorage persistence** — all data survives page refresh, no account required
-- **Ambient sound** — white noise, rain, and brown noise via Web Audio API
-- **CSV export** — one-click download of full sprint history
-- **Privacy-first** — all data stays local by default, one-tap purge
+- **25-minute sprint timer:** animated SVG countdown ring with pause, resume, and cancel
+- **Task labeling:** users name what they're working on before each sprint, saved with the log
+- **Pre & post mood check-in:** 5-point emoji scale before and after every session
+- **AI coaching:** Claude generates a personalized response based on the user's mood shift after each sprint
+- **Break timer:** automatic countdown between sprint end and mood check
+- **Dashboard:** goal ring, streak counter, best day stat, all-time focus time, avg mood shift
+- **Mood trend chart:** SVG bar chart showing before/after mood across recent sessions
+- **Sprint log:** tabbed history with task, date, duration, and mood data
+- **Settings:** configurable sprint duration (15/25/45/52 min), break duration, daily goal, light/dark theme
+- **localStorage persistence:** all data survives page refresh, no account required
+- **Ambient sound:** white noise, rain, and brown noise via Web Audio API
+- **CSV export:** one-click download of full sprint history
+- **Privacy-first:** all data stays local by default, one-tap purge
 
 ---
 
@@ -101,10 +101,10 @@ npm run dev
 
 This project draws on published research examining digital interventions for ADHD:
 
-- **Pomodoro Technique** — structured time-boxing to reduce task initiation friction
-- **CBT self-monitoring** — mood check-ins before and after tasks to build metacognitive awareness
-- **Positive reinforcement loops** — immediate, specific feedback after task completion
-- **Ethics of mental health apps** — privacy-first design, no diagnostic claims, clear data transparency
+- **Pomodoro Technique:** structured time-boxing to reduce task initiation friction
+- **CBT self-monitoring:** mood check-ins before and after tasks to build metacognitive awareness
+- **Positive reinforcement loops:** immediate, specific feedback after task completion
+- **Ethics of mental health apps:** privacy-first design, no diagnostic claims, clear data transparency
 
 
 ---
