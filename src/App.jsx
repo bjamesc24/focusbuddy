@@ -66,7 +66,7 @@ export default function App() {
     if (screen !== "timer" || paused) { clearInterval(tickRef.current); return; }
     tickRef.current = setInterval(() => {
       setTimeLeft((t) => {
-        if (t <= 1) { clearInterval(tickRef.current); setScreen("break"); return 0; }
+        if (t <= 1) { clearInterval(tickRef.current); setScreen("post"); return 0; }
         return t - 1;
       });
     }, 1000);
@@ -190,13 +190,11 @@ export default function App() {
       />
     );
 
-  if (screen === "break")
-    return <Break breakSecs={breakMins * 60} onDone={() => setScreen("post")} />;
-
   if (screen === "post")
     return (
       <PostSprint
         preMood={preMood} postMood={postMood} setPostMood={setPostMood}
+        breakSecs={breakMins * 60}
         onLog={logSprint}
       />
     );
