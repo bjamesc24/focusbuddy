@@ -132,7 +132,7 @@ export default function App() {
       const d = await r.json();
       setAiMsg(d.message);
     } catch {
-      setAiMsg("You showed up and followed through — that's the hardest part, and you nailed it! 🌟");
+      setAiMsg("You showed up and followed through, that's the hardest part, and you nailed it! 🌟");
     }
     setAiLoading(false);
   };

@@ -38,7 +38,7 @@ export default function Result({ preMood, postMood, aiMsg, aiLoading, todayCount
           </div>
 
           <div style={{ color: COLORS.MUTED, fontSize: 11, marginBottom: 20 }}>
-            — FocusBuddy AI (powered by Claude)
+            FocusBuddy AI (powered by Claude)
           </div>
 
           {/* Stats */}

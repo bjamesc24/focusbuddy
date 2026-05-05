@@ -119,7 +119,7 @@ export default function PostSprint({ preMood, postMood, setPostMood, breakSecs, 
           </div>
 
           <button style={styles.primaryBtn} onClick={onLog}>
-            Log Sprint &amp; Get AI Kudos →
+            Log Sprint &amp; Get AI Feedback →
           </button>
         </div>
 
