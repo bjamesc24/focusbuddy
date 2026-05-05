@@ -152,7 +152,7 @@ export default function Dashboard({ todayLogs, logs, goal, sprintMins, onStartSp
               <div style={styles.label}>Today's mood journey</div>
               {todayLogs.length === 0 ? (
                 <div style={{ color: COLORS.MUTED2, fontSize: 13, padding: "10px 0" }}>
-                  No sprints yet — you've got this! 💪
+                  No sprints yet, you've got this! 💪
                 </div>
               ) : (
                 <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
